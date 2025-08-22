@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres
+    restart: always   # typo fixed: restrart -> restart
+    environment:
+      POSTGRES_PASSWORD: admin_password
+      POSTGRES_USER: postgres_user
+      POSTGRES_DB: postgres_DB
+
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data   # typo fixed: postgressql -> postgresql
+
+volumes:
+  db_data:   # indentation fixed
